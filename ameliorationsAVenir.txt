@@ -1,0 +1,5 @@
+AMELIORATIONS
+
+Le guess feedback pr tjrs savoir sur qui tu t trompé
+améliroer feedback si le tour c fini parce que tlm a répondu, ou a cause du temps
+permettre config avant de lancer la game

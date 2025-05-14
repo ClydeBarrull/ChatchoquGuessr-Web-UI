@@ -1,0 +1,12 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Limite la hauteur des GIF Tenor ---------------------------- */
+.tenor-wrapper iframe,
+.tenor-wrapper .tenor-gif-embed {
+  width: 100% !important;          /* que ça remplisse bien la ligne */
+  max-height: 20rem !important;    /* ≈ 320 px – ajuste à ton goût   */
+  object-fit: contain;
+}
