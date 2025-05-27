@@ -3,3 +3,14 @@ AMELIORATIONS
 Le guess feedback pr tjrs savoir sur qui tu t trompé
 améliroer feedback si le tour c fini parce que tlm a répondu, ou a cause du temps
 permettre config avant de lancer la game
+gif fixer hitbox bug
+fixer caractères qui pètent (utf 8 -> 16) ?
+faire un lobby ou on peut faire ready
+montrer les gens dans le lobby
+afficher emojis
+améliorer visuellement les messages
+réveler le mec qui est auteur
+les pp des mecs
+montrer le nombre de rounds total
+annuler le round tot quand tt lmonde a trouvé
+icones sur les boutonss

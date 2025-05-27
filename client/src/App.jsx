@@ -156,14 +156,15 @@ const handleGuess = (author) => {
               ⭐ {5 - 1 * (visibleMessages.length - 1)} points pour une bonne réponse
             </span>
           </div>
-          <div className="flex flex-col gap-4 mb-6">
+           {/* carte Discord-like qui englobe tout */}
+          <div className="bg-gray-800 rounded-lg p-4 space-y-2 mb-6">
             {allMessages.map((msg, idx) => (
-                <MessageCard
-                  key={idx}
-                  message={msg}
-                  placeholder={idx >= visibleMessages.length}
-                />
-              ))}
+              <MessageCard
+                key={idx}
+                message={msg}
+                placeholder={idx >= visibleMessages.length}
+              />
+            ))}
           </div>
           <h2 className="text-2xl font-semibold mb-4">Clique sur la personne que penses être l'auteur ou l'autrice...</h2>
           <div className="flex flex-wrap gap-4 mb-6">

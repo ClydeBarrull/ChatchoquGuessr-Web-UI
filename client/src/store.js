@@ -9,6 +9,7 @@ const useGameStore = create((set) => ({
   results: {},
   isHost: false,
   name: '',
+  currentAuthor: null,
   round: 0,
   phaseStart: 0,
   revealDelay: 0,
@@ -35,6 +36,7 @@ const useGameStore = create((set) => ({
   setRoundData: (data) =>
     set((state) => ({
       round: data.round,
+      currentAuthor: data.author,
       phaseStart: data.phaseStart,
       revealDelay: data.revealDelay,
       timeLeft: Math.ceil(data.revealDelay / 1000),

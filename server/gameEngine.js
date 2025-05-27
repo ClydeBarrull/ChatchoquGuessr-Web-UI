@@ -4,6 +4,7 @@ export function pickRounds(rows, rounds = 11) { // faut mettre 1 de plus 11 = 10
   rows.forEach(({ message, author }) => {
     if (!byAuthor[author]) byAuthor[author] = [];
     byAuthor[author].push(message);
+    // byAuthor[author].push("https://tenor.com/view/horse-cat-ride-it-gif-20219971");
   });
   const authors = Object.entries(byAuthor)
     .filter(([, msgs]) => msgs.length >= 5)

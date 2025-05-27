@@ -1,5 +1,6 @@
 
 import express from 'express';
+import 'dotenv/config';                     
 import { Server } from 'socket.io';
 import http from 'http';
 import cors from 'cors';
@@ -10,6 +11,7 @@ import { pickRounds, scoreGuess } from './gameEngine.js';
 const PORT = process.env.PORT || 3001;
 import { fileURLToPath } from 'url';
 import path from 'path';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CSV_PATH = path.resolve(fileURLToPath(new URL('../data/quotes.csv', import.meta.url)));
 
 const app = express();
@@ -23,6 +25,10 @@ const csvRows = parse(fs.readFileSync(CSV_PATH), {
   skip_empty_lines: true
 });
 
+const authorsJson = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '../data/authors.json'), 'utf-8')
+);
+
 let inGame = false;
 let hostSocketId = null;
 let rounds = [];
@@ -32,6 +38,8 @@ let visible = 0;
 let roundAuthor = '';
 const basePoints = 5;
 const stepPoints = 1;
+
+app.get('/api/authors', (_, res) => res.json(authorsJson));
 
 io.on('connection', (socket) => {
   console.log('client connected');
